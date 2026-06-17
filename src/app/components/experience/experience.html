@@ -1,0 +1,41 @@
+<section class="experience" id="experiencia">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Experiencia</p>
+      <h2 class="section-title">Trayectoria en entornos críticos</h2>
+      <p class="section-sub">
+        Foco en banca y seguros, donde la tolerancia a error es baja y la
+        trazabilidad del dato es innegociable.
+      </p>
+    </div>
+
+    <ol class="timeline">
+      @for (item of experience; track item.company) {
+        <li class="timeline__item">
+          <div class="timeline__marker" aria-hidden="true"></div>
+
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3 class="timeline__company">{{ item.company }}</h3>
+              <span class="timeline__period">{{ item.period }}</span>
+            </div>
+
+            <p class="timeline__role">{{ item.role }} · {{ item.industry }}</p>
+
+            <ul class="timeline__highlights">
+              @for (point of item.highlights; track point) {
+                <li>{{ point }}</li>
+              }
+            </ul>
+
+            <div class="timeline__stack">
+              @for (tech of item.stack; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

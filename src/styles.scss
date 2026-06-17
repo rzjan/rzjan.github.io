@@ -1,0 +1,177 @@
+// ============================================
+// Design tokens — Jorge Rodríguez Portfolio
+// ============================================
+
+:root {
+  // Color
+  --bg: #0B0E14;
+  --surface: #141925;
+  --surface-2: #1B2230;
+  --border: #262E3D;
+  --border-hover: #38465C;
+
+  --text: #E8EAED;
+  --text-secondary: #7C8B9E;
+  --text-tertiary: #4A5568;
+
+  --accent: #4F7CFF;
+  --accent-dim: #2E4A99;
+  --accent-2: #5EEAD4;
+  --accent-2-dim: #2D8A78;
+
+  // Type
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  // Layout
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --max-width: 1120px;
+  --section-pad-y: clamp(64px, 10vw, 120px);
+  --section-pad-x: clamp(20px, 5vw, 32px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-pad-x);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--accent-2);
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+
+  &--primary {
+    background: var(--accent);
+    color: #0B0E14;
+    border: 1px solid var(--accent);
+
+    &:hover {
+      background: #6B91FF;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+
+    &:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+    }
+  }
+}
+
+.section-head {
+  margin-bottom: 48px;
+  max-width: 620px;
+}
+
+.section-title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  color: var(--text-secondary);
+  font-size: 16px;
+}

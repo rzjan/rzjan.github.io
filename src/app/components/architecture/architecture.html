@@ -1,0 +1,36 @@
+<section class="architecture" id="arquitectura">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Arquitectura</p>
+      <h2 class="section-title">Un sistema, de punta a punta</h2>
+      <p class="section-sub">
+        No diseño solo el backend ni solo la pantalla: pienso el flujo
+        completo, desde la interacción del usuario hasta el dato persistido.
+      </p>
+    </div>
+
+    <div class="arch-map">
+      @for (layer of layers; track layer.index; let i = $index) {
+        <div class="arch-col">
+          <p class="arch-col__label">{{ layer.index }} · {{ layer.label }}</p>
+          <h3 class="arch-col__title">{{ layer.title }}</h3>
+          <div class="arch-col__tags">
+            @for (item of layer.stack; track item) {
+              <span class="tag">{{ item }}</span>
+            }
+          </div>
+        </div>
+
+        @if (i < layers.length - 1) {
+          <div class="arch-connector" [class]="'arch-connector--' + connectors[i].color">
+            <svg viewBox="0 0 60 24" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="0" y1="12" x2="60" y2="12" class="arch-connector__track" stroke-width="2" />
+              <line x1="0" y1="12" x2="60" y2="12" class="arch-connector__pulse" stroke-width="2" stroke-dasharray="6 18" />
+            </svg>
+            <span class="arch-connector__proto">{{ connectors[i].protocol }}</span>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<section class="projects" id="proyectos">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Proyectos</p>
+      <h2 class="section-title">Vidriera técnica</h2>
+      <p class="section-sub">
+        Una selección de proyectos públicos. Esta sección se amplía a medida
+        que suman nuevos repos.
+      </p>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.name) {
+        <article class="project-card">
+          <div class="project-card__head">
+            <span class="project-card__tag">{{ project.tag }}</span>
+            <span class="project-card__status" [class]="'project-card__status--' + project.status">
+              {{ project.statusLabel }}
+            </span>
+          </div>
+
+          <h3 class="project-card__title">{{ project.name }}</h3>
+          <p class="project-card__desc">{{ project.description }}</p>
+
+          <div class="project-card__stack">
+            @for (item of project.stack; track item) {
+              <span class="tag">{{ item }}</span>
+            }
+          </div>
+
+          <div class="project-card__links">
+            <a [href]="project.repoUrl" target="_blank" rel="noopener" class="project-card__link">
+              Ver repositorio →
+            </a>
+            @if (project.liveUrl) {
+              <a [href]="project.liveUrl" target="_blank" rel="noopener" class="project-card__link">
+                Demo en vivo →
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

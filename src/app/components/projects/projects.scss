@@ -1,0 +1,110 @@
+.projects {
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--border);
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__status {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+
+    &--live {
+      color: var(--accent-2);
+      background: rgba(94, 234, 212, 0.08);
+      border: 1px solid var(--accent-2-dim);
+    }
+
+    &--in-progress {
+      color: var(--accent);
+      background: rgba(79, 124, 255, 0.08);
+      border: 1px solid var(--accent-dim);
+    }
+
+    &--building {
+      color: var(--text-secondary);
+      background: var(--surface-2);
+      border: 1px solid var(--border-hover);
+    }
+  }
+
+  &__tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--accent-2);
+    background: rgba(94, 234, 212, 0.08);
+    border: 1px solid var(--accent-2-dim);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  &__desc {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 22px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+
+  &__link {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--accent);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--accent-2);
+    }
+  }
+}

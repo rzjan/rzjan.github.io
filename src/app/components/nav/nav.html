@@ -1,0 +1,25 @@
+<header class="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__brand">JR<span class="nav__brand-dot">.</span></a>
+
+    <nav class="nav__links" [class.nav__links--open]="open()">
+      <a href="#arquitectura" (click)="close()">Arquitectura</a>
+      <a href="#proyectos" (click)="close()">Proyectos</a>
+      <a href="#experiencia" (click)="close()">Experiencia</a>
+      <a href="#contacto" (click)="close()">Contacto</a>
+    </nav>
+
+    <a href="#contacto" class="btn btn--primary nav__cta">Disponible</a>
+
+    <button
+      class="nav__toggle"
+      type="button"
+      (click)="toggle()"
+      [attr.aria-expanded]="open()"
+      aria-label="Abrir menú de navegación"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
