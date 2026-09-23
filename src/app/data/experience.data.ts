@@ -9,7 +9,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     highlights: [
       'Lideré el diseño y ejecución técnica del proceso de ETL y migración de datos desde sistemas legacy (Mainframe/Cobol) hacia el nuevo modelo relacional y documental del sistema de Cajas de Seguridad.',
       'Diseñé e implementé arquitecturas de microservicios bajo Clean Architecture y DDD, con despliegues en OpenShift y Jenkins (CI/CD).',
-      'Aplicué metodología Spec para la definición estricta de contratos, esquemas y servicios del ecosistema backend.',
+      'Apliqué metodología Spec para la definición estricta de contratos, esquemas y servicios del ecosistema backend.',
       'Integré de extremo a extremo el sistema con ServiceNow para automatización de pedidos internos y flujos de tickets enterprise.',
       'Coordiné la migración masiva de datos estructurados desde la plataforma de Ex-HSBC hacia los sistemas unificados de Banco Galicia.',
     ],
